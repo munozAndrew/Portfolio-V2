@@ -5,21 +5,21 @@ import Link from 'next/link';
 const Navbar: React.FC = () => {
   return (
     
-    <nav style={styles.nav}>
-      <ul style={styles.ul}>
-        <li style={styles.li}>
+    <nav className="bg-gray-800 text-white p-4">
+      <ul className="flex justify-end space-x-8">
+        <li >
           {/* 7. Use Next.js's Link component to navigate to the home page. */}
-          <Link href="/">Home</Link>
+          <Link href="/" className="transition-colors duration-500 ease-in-out hover:text-blue-300">Home</Link>
         </li>
-        <li style={styles.li}>
+        <li >
           {/* 8. Link to the About page. */}
           <Link href="/about">About</Link>
         </li>
-        <li style={styles.li}>
+        <li >
           {/* 9. Link to the Projects page. */}
           <Link href="/projects">Projects</Link>
         </li>
-        <li style={styles.li}>
+        <li >
           {/* 10. Link to the Contact page. */}
           <Link href="/contact">Contact</Link>
         </li>
@@ -29,31 +29,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-const styles = {
-  nav: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    aligntItems: 'center',
-    padding: '1rem',
-    background: '#333',
-    color: '#453',
-    //display: 'flex', // Flexbox layout for alignment.
-    //justifyContent: 'space-between', // Space out the items evenly.
-    //alignItems: 'center', // Center the items vertically.
-    //padding: '1rem', // Add padding around the navbar.
-    //background: '#333', // Set the background color to a dark shade.
-    //color: '#fff', // Set the text color to white.
-  },
-  ul: {
-    //listStyle: 'none', // Remove default list styling.
-    //display: 'flex', // Display list items in a row.
-    //margin: 0, // Remove default margin.
-    //padding: 0, // Remove default padding.
-  },
-  li: {
-    //margin: '0 1rem', // Add space between list items.
-  },
-};
-
-// 12. Export the Navbar component as the default export.
 export default Navbar;
