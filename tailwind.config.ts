@@ -8,6 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: { purple1:'#10002b', 
+                purple2:'#240046',
+                purple3:'#3c096c',
+                purple4:'#5a189a',
+                purple5:'#7b2cbf',
+                purple6:'#9d4edd',
+                purple7:'#c77dff',
+                purple8:'#e0aaff',
+      },
+      
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,5 +26,6 @@ const config: Config = {
     },
   },
   plugins: [],
+  
 };
 export default config;
