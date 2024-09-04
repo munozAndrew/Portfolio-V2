@@ -18,10 +18,10 @@ const Footer: React.FC = () => {
                         <a href="tel:+1234567890" className="text-blue-400 ml-2">+1234567890</a>
                     </p>
                     <div className="mt-2 flex space-x-4">
-                        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400">
+                        <a href="https://www.linkedin.com/in/amunozar/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400">
                             <FontAwesomeIcon style={{ fontSize: "25px" }} icon={faLinkedin} />
                         </a>
-                        <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400">
+                        <a href="https://github.com/munozAndrew" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400">
                             <FontAwesomeIcon style={{ fontSize: "25px" }} icon={faGithub} />
                         </a>
                     </div>
