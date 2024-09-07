@@ -1,9 +1,9 @@
-import {createAssitant} from "../../lib/assistant"
-import {createandUploadVS} from "../../lib/vectorStore"
+import {createAssistant} from "../../lib/assistant"
+import {createAndUploadVectorStore} from "../../lib/vectorStore"
 import OpenAI from 'openai';
 import fs from 'fs';
 
-export default async function setUp(req, res){
+export default async function run(req, res){
 
     if (req.method == "POST"){
 
