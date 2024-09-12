@@ -15,7 +15,6 @@ const Index: React.FC = () => {
     <Home/>
     <Projects/>
     <Footer/>
-    <Chatbot/>
 
     
     </>

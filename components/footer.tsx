@@ -1,9 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-const Footer: React.FC = () => {
+const Footer = () => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        email: '',
+        message: ''
+    });
+
+
+
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await fetch('/api/send-sms', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            alert('Message sent successfully!');
+            setFormData({ fullName: '', email: '', message: '' });
+        } else {
+            alert('Message failed to send.');
+        }
+    };
+
     return (
         <footer className="bg-gray-800 text-white py-6">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center">
@@ -28,7 +64,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="md:w-2/3 md:ml-4">
                     <section className="flex justify-center items-center">
-                        <form className="w-full bg-white pt-6 px-6 pb-6 rounded-lg shadow-lg text-[#333]">
+                        <form className="w-full bg-white pt-6 px-6 pb-6 rounded-lg shadow-lg text-[#333]" onSubmit={handleSubmit}>
                             <h2 className="text-3xl text-center">Contact Form</h2>
                             <div className="mt-5">
                                 <label>Full Name</label>
