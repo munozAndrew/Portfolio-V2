@@ -12,8 +12,8 @@ const Footer = () => {
 
 
 
-
-    const handleChange = (e) => {
+    //event handlers
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const {name, value} = e.target;
         setFormData({
             ...formData,
@@ -21,9 +21,9 @@ const Footer = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = await fetch('/api/send-sms', {
+        const response = await fetch('/api/SMS', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -68,15 +68,15 @@ const Footer = () => {
                             <h2 className="text-3xl text-center">Contact Form</h2>
                             <div className="mt-5">
                                 <label>Full Name</label>
-                                <input type="text" placeholder="Enter your name" required className="w-full h-12 bg-transparent  border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
+                                <input type="text" name="fullName" placeholder="Enter your name" required value={formData.fullName} onChange={handleChange} className="w-full h-12 bg-transparent  border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
                             </div>
                             <div className="mt-5">
                                 <label>Email Address</label>
-                                <input type="email" placeholder="Enter your Email" required className="w-full h-12 bg-transparent  border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
+                                <input type="email" name="email" placeholder="Enter your Email" required value={formData.email} onChange={handleChange} className="w-full h-12 bg-transparent  border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
                             </div>
                             <div className="mt-5">
                                 <label>Message</label>
-                                <textarea placeholder="Enter your message" required className="resize-none w-full h-48 bg-transparent border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
+                                <textarea name="message" placeholder="Enter your message" required value={formData.message} onChange={handleChange} className="resize-none w-full h-48 bg-transparent border-2 border-gray-300 outline-none rounded-md p-4 text-base text-[#333] mt-2"/>
                             </div>
                             <button type="submit" className="w-full h-14 bg-purple-500 border-0 rounded-md shadow-lg font-medium mt-5">Send Message</button>
                         </form>
