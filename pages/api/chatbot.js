@@ -1,5 +1,5 @@
 import {createAssistant} from "../../lib/assistant"
-import {createAndUploadVectorStore} from "../../lib/vectorStore"
+//import {createAndUploadVectorStore} from "../../lib/vectorStore"
 import OpenAI from 'openai';
 import fs from 'fs';
 
